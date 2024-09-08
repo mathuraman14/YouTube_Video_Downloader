@@ -4,7 +4,7 @@ import os
 from googleapiclient.discovery import build
 
 # Replace with your YouTube Data API key
-API_KEY = 'AIzaSyAMxRJQflQlKUm2-pGnAnw3zZy6j5qAXKQ'
+API_KEY = 'YOUR_API_KEY'
 
 # Replace with your playlist ID
 playlist_link = input('Enter YouTube Playlist Link: ')
