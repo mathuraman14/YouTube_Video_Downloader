@@ -4,7 +4,7 @@ import yt_dlp
 
 #Define the playlist URL and directory
 playlist_url = input('Enter YouTube Playlist Link: ')
-download_dir = 'YouTube_Playlist'
+download_dir = r'D:\Videos\{Your_Playlist_Link}'
 
 #Create the directory if it doesn't exist
 os.makedirs(download_dir, exist_ok=True)
