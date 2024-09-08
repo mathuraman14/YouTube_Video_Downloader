@@ -25,7 +25,17 @@ def get_playlist_name(playlist_id):
     if 'items' in response and len(response['items']) > 0:
         return response['items'][0]['snippet']['title']
     else:
-        raise ValueError('Playlist not found or no items found.')
+        #raise ValueError('Playlist not found or no items found.')
+        folder_name: str = r"D:\Videos\YouTubeVideoDownloader"
+        os.makedirs(folder_name, exist_ok=True)
+
+        ydl_opts = {
+            'format': 'best',
+            'outtmpl': os.path.join(folder_name, '%(title)s.%(ext)s'),
+        }
+
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            ydl.download([playlist_link])
 
 def create_folder_and_download(folder_name):
     if not os.path.exists(folder_name):
